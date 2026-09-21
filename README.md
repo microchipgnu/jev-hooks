@@ -1,3 +1,5 @@
+![Jev Hooks — semantic propagation for React and the backend. Facts → meaning → consequences.](https://raw.githubusercontent.com/microchipgnu/jev-hooks/main/.github/assets/jev-hooks-banner.png)
+
 # jev-hooks
 
 **Compose meaning like state.**
