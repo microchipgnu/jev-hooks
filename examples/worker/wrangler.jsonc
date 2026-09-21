@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "jev-hooks-example",
+  "main": "index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": { "JEV_PROVIDER": "mock" }
+  // To opt into paid Cloudflare inference, change JEV_PROVIDER to "cloudflare"
+  // and add: "ai": { "binding": "AI", "remote": true }
+}

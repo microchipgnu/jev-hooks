@@ -1,0 +1,9 @@
+{
+  "name": "jev-hooks-consumer-test",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "@types/node": "24.10.1"
+  }
+}

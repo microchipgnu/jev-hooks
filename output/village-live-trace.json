@@ -1,0 +1,381 @@
+{
+  "source": "live Jev",
+  "url": "https://jev-hooks-demo.microchipgnu.workers.dev",
+  "at": "2026-09-20T09:42:26.240Z",
+  "traces": [
+    {
+      "input": {
+        "kind": "village",
+        "scopeId": "village",
+        "facts": {
+          "foodSupply": 68,
+          "treasury": 510,
+          "taxRate": 0.24,
+          "crime": 0.08,
+          "trade": 82,
+          "population": 15,
+          "guards": 2,
+          "rationing": false,
+          "marketOpen": true,
+          "events": [
+            {
+              "type": "tax_changed",
+              "previous": 0.12,
+              "next": 0.24,
+              "districtId": "village"
+            }
+          ]
+        },
+        "inherited": {}
+      },
+      "questions": {
+        "village.concern": {
+          "type": "choice",
+          "instructions": "What is the single dominant concern across this village right now?",
+          "criteria": {
+            "food": "Food availability and hunger.",
+            "safety": "Crime and personal security.",
+            "money": "Taxes, prices and livelihoods.",
+            "disease": "Illness and health threats.",
+            "outsiders": "Integration of new arrivals.",
+            "none": "No concern dominates ordinary life."
+          }
+        },
+        "village.mood": {
+          "type": "choice",
+          "instructions": "What best describes the village's current social mood? Interpret the supplied facts, not a preferred storyline.",
+          "criteria": {
+            "hopeful": "People broadly believe conditions are improving.",
+            "stable": "People feel relatively secure and normal.",
+            "anxious": "Widespread concern about what may happen next.",
+            "angry": "Widespread resentment toward current conditions and leadership.",
+            "desperate": "Basic needs and social order are under severe pressure."
+          }
+        },
+        "village.trust": {
+          "type": "score",
+          "instructions": "How much trust do residents have in the village council, given material conditions and recent actions?",
+          "criteria": [
+            "Very little trust; leadership is failing residents",
+            "Mixed or fragile trust; meaningful doubts",
+            "Strong trust; leadership is meeting residents' needs"
+          ]
+        }
+      },
+      "result": {
+        "answers": {
+          "village.concern": {
+            "type": "choice",
+            "choice": "money",
+            "confidence": 0.94,
+            "probabilities": {
+              "safety": 0,
+              "disease": 0,
+              "none": 0.04,
+              "outsiders": 0,
+              "money": 0.95,
+              "food": 0.01
+            }
+          },
+          "village.mood": {
+            "type": "choice",
+            "choice": "stable",
+            "confidence": 0.36,
+            "probabilities": {
+              "angry": 0.27,
+              "anxious": 0.23,
+              "desperate": 0,
+              "hopeful": 0.01,
+              "stable": 0.49
+            }
+          },
+          "village.trust": {
+            "type": "score",
+            "score": 1.03,
+            "confidence": 0.92,
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.95,
+              "2": 0.04
+            },
+            "legend": {
+              "0": "Very little trust; leadership is failing residents",
+              "1": "Mixed or fragile trust; meaningful doubts",
+              "2": "Strong trust; leadership is meeting residents' needs"
+            }
+          }
+        },
+        "usage": {
+          "since": 1789894456487,
+          "requests": 92,
+          "inferenceCalls": 64,
+          "cacheHits": 26,
+          "coalescedRequests": 0,
+          "meteredCalls": 64,
+          "inputTokens": 27459,
+          "outputTokens": 4983,
+          "estimatedCostUsd": 0.001153278
+        },
+        "model": "jev-1.13.0"
+      },
+      "cache": "HIT",
+      "durationMs": 510
+    },
+    {
+      "input": {
+        "kind": "district",
+        "scopeId": "district:market",
+        "facts": {
+          "prices": 1.16,
+          "openStalls": 7,
+          "totalStalls": 7,
+          "tradeVolume": 80,
+          "foodStock": 60,
+          "workers": 3,
+          "incidentCount": 0
+        },
+        "inherited": {
+          "village.concern": "money",
+          "village.mood": "stable",
+          "village.trust": 1.03
+        }
+      },
+      "questions": {
+        "district.mood": {
+          "type": "choice",
+          "instructions": "Given inherited village meaning and this district's facts, what best describes its local mood? Local conditions may diverge from the village.",
+          "criteria": {
+            "calm": "Normal routines and relative security.",
+            "uneasy": "Unsettled by local or wider pressures.",
+            "angry": "Local resentment and frustration.",
+            "optimistic": "Local conditions support optimism."
+          }
+        },
+        "district.pressure": {
+          "type": "choice",
+          "instructions": "What most strongly pressures this district right now?",
+          "criteria": {
+            "prices": "High food or market prices.",
+            "crime": "Theft or poor security.",
+            "trade": "Declining trade and closed stalls.",
+            "labor": "Too few workers for local needs.",
+            "food": "Local supplies are running short.",
+            "none": "No significant local pressure."
+          }
+        }
+      },
+      "result": {
+        "answers": {
+          "district.mood": {
+            "type": "choice",
+            "choice": "calm",
+            "confidence": 0.61,
+            "probabilities": {
+              "uneasy": 0.03,
+              "optimistic": 0.26,
+              "calm": 0.71,
+              "angry": 0
+            }
+          },
+          "district.pressure": {
+            "type": "choice",
+            "choice": "prices",
+            "confidence": 0.45,
+            "probabilities": {
+              "labor": 0.06,
+              "crime": 0,
+              "trade": 0,
+              "prices": 0.55,
+              "none": 0.33,
+              "food": 0.06
+            }
+          }
+        },
+        "usage": {
+          "since": 1789894456487,
+          "requests": 93,
+          "inferenceCalls": 64,
+          "cacheHits": 27,
+          "coalescedRequests": 0,
+          "meteredCalls": 64,
+          "inputTokens": 27459,
+          "outputTokens": 4983,
+          "estimatedCostUsd": 0.001153278
+        },
+        "model": "jev-1.13.0"
+      },
+      "cache": "HIT",
+      "durationMs": 178
+    },
+    {
+      "input": {
+        "kind": "family",
+        "scopeId": "family:venn",
+        "facts": {
+          "savings": 58,
+          "foodDays": 5,
+          "dependents": 0,
+          "incomeDelta": -36
+        },
+        "inherited": {
+          "village.concern": "money",
+          "village.mood": "stable",
+          "village.trust": 1.03,
+          "district.mood": "calm",
+          "district.pressure": "prices"
+        }
+      },
+      "questions": {
+        "family.grievance": {
+          "type": "choice",
+          "instructions": "What is this family's main grievance toward current conditions?",
+          "criteria": {
+            "money": "Financial strain or income losses.",
+            "food": "Insufficient household food.",
+            "safety": "Unsafe surroundings.",
+            "none": "No substantial grievance."
+          }
+        },
+        "family.stability": {
+          "type": "choice",
+          "instructions": "How secure is this household, given its finances, food reserves and inherited district context?",
+          "criteria": {
+            "stable": "Resources cover ordinary needs.",
+            "strained": "Needs are covered with pressure or tradeoffs.",
+            "precarious": "Basic needs are at immediate risk."
+          }
+        }
+      },
+      "result": {
+        "answers": {
+          "family.grievance": {
+            "type": "choice",
+            "choice": "money",
+            "confidence": 1,
+            "probabilities": {
+              "food": 0,
+              "money": 1,
+              "none": 0,
+              "safety": 0
+            }
+          },
+          "family.stability": {
+            "type": "choice",
+            "choice": "strained",
+            "confidence": 0.55,
+            "probabilities": {
+              "precarious": 0.3,
+              "strained": 0.7,
+              "stable": 0
+            }
+          }
+        },
+        "usage": {
+          "since": 1789894456487,
+          "requests": 94,
+          "inferenceCalls": 64,
+          "cacheHits": 28,
+          "coalescedRequests": 0,
+          "meteredCalls": 64,
+          "inputTokens": 27459,
+          "outputTokens": 4983,
+          "estimatedCostUsd": 0.001153278
+        },
+        "model": "jev-1.13.0"
+      },
+      "cache": "HIT",
+      "durationMs": 178
+    },
+    {
+      "input": {
+        "kind": "person",
+        "scopeId": "person:mara",
+        "facts": {
+          "occupation": "merchant",
+          "wealth": 34,
+          "hunger": 12,
+          "health": 90,
+          "recentIncomeDelta": -12,
+          "witnessedEvents": [
+            {
+              "type": "tax_changed",
+              "previous": 0.12,
+              "next": 0.24,
+              "districtId": "village"
+            }
+          ]
+        },
+        "inherited": {
+          "village.concern": "money",
+          "village.mood": "stable",
+          "village.trust": 1.03,
+          "district.mood": "calm",
+          "district.pressure": "prices",
+          "family.grievance": "money",
+          "family.stability": "strained"
+        }
+      },
+      "questions": {
+        "person.attitude": {
+          "type": "choice",
+          "instructions": "What is this person's likely attitude toward the village council, given personal facts, witnessed events and inherited meaning?",
+          "criteria": {
+            "supportive": "Council actions benefit this resident.",
+            "neutral": "Neither supportive nor critical.",
+            "skeptical": "Doubts about the council's choices.",
+            "hostile": "Strong resentment toward the council."
+          }
+        },
+        "person.secure": {
+          "type": "noul",
+          "instructions": "Does this person currently feel that their basic material needs and personal safety are secure, given personal and inherited context?"
+        }
+      },
+      "result": {
+        "answers": {
+          "person.attitude": {
+            "type": "choice",
+            "choice": "skeptical",
+            "confidence": 0.77,
+            "probabilities": {
+              "hostile": 0.17,
+              "supportive": 0,
+              "skeptical": 0.83,
+              "neutral": 0
+            }
+          },
+          "person.secure": {
+            "type": "noul",
+            "noul": 0.38
+          }
+        },
+        "usage": {
+          "since": 1789894456487,
+          "requests": 95,
+          "inferenceCalls": 64,
+          "cacheHits": 29,
+          "coalescedRequests": 0,
+          "meteredCalls": 64,
+          "inputTokens": 27459,
+          "outputTokens": 4983,
+          "estimatedCostUsd": 0.001153278
+        },
+        "model": "jev-1.13.0"
+      },
+      "cache": "HIT",
+      "durationMs": 180
+    }
+  ],
+  "usage": {
+    "since": 1789894456487,
+    "requests": 96,
+    "inferenceCalls": 64,
+    "cacheHits": 30,
+    "coalescedRequests": 0,
+    "meteredCalls": 64,
+    "inputTokens": 27459,
+    "outputTokens": 4983,
+    "estimatedCostUsd": 0.001153278
+  },
+  "cacheRevisit": "HIT"
+}

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.tgz
+.DS_Store
+.wrangler/
+.dev.vars
+.dev.vars.*
+.playground-dist/
+
+# Local recordings, screenshots and validation output.
+output/*
+!output/village-live-trace.json
