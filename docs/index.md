@@ -24,6 +24,8 @@ const attention = useNoul({
 
 ## Start here
 
+- [Build with an agent](agents.md): install the Jev Hooks skill for frontend/backend or backend-only work.
+
 - [React quickstart](quickstart.md): a working, interactive example with no API key.
 - [Composition and ambient state](concepts.md): why an argument creates an edge, and how meaning crosses components.
 - [Backend programs](backend.md): compose judgments in Node.js or a Worker, without React.

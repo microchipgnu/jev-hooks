@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jev Hooks"
+  short_description: "Wire semantic hooks in React and backend programs"
+  default_prompt: "Use $jev-hooks to integrate composed semantic judgments into this application."

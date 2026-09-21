@@ -55,3 +55,23 @@ assert.equal((await POST(request())).status, 502); // Missing provider credentia
 console.log(
   "PASS: documented Worker binding request and Next route authorization using installed package.",
 );
+
+const { createEndpoint } = await import(
+  "./react-dist/skill-assets/endpoint.js"
+);
+const { createJevClient } = await import("jev-hooks/react");
+const mockEndpoint = createEndpoint(
+  (req) => req.headers.get("Authorization") === `Bearer ${token}`,
+);
+assert.equal((await mockEndpoint(request(false))).status, 403);
+const client = createJevClient({
+  endpoint: "https://example.test/api/jev",
+  headers: { Authorization: `Bearer ${token}` },
+  fetch: (url, init) => mockEndpoint(new Request(url, init)),
+});
+const result = await client.evaluate(input);
+assert.equal(result.pressure.type, "score");
+assert.equal(result.pressure.score, 1);
+console.log(
+  "PASS: skill frontend HTTP client → authorized backend endpoint → mock answer.",
+);

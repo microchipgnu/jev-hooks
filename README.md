@@ -36,6 +36,18 @@ The server `jev-hooks` entry supports synchronous programs evaluated by `run()` 
 
 [React API](docs/react.md) · [Composition design and review](docs/composition.md) · [Architecture](docs/architecture.md)
 
+## Build with an agent
+
+Install the Jev Hooks skill in your application project:
+
+```sh
+npx skills add microchipgnu/jev-hooks --skill jev-hooks
+```
+
+The skill teaches agents both **React + backend** and **backend-only** integration, including composition, ambient scope, provider setup and mock validation. Install the library separately with `npm install jev-hooks`.
+
+[Agent guide](https://jev-hooks-demo.microchipgnu.workers.dev/docs/agents/) · [Skill source](skills/jev-hooks/SKILL.md) · [Frontend + backend](skills/jev-hooks/references/full-stack.md) · [Backend only](skills/jev-hooks/references/backend.md)
+
 ## Worldline — event-driven world monitor
 
 [Open the monitor](https://jev-hooks-demo.microchipgnu.workers.dev) · [Architecture, setup and limitations](docs/world-monitor.md)

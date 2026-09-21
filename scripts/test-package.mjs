@@ -134,6 +134,9 @@ execFileSync(
   ],
   { cwd: consumer, stdio: "inherit" },
 );
+cpSync(join(root, "skills/jev-hooks/assets"), join(consumer, "skill-assets"), {
+  recursive: true,
+});
 cpSync(join(root, "docs/snippets"), join(consumer, "docs-snippets"), {
   recursive: true,
 });
@@ -161,6 +164,9 @@ execFileSync(
     "docs-snippets/backend.ts",
     "docs-snippets/next-route.ts",
     "docs-snippets/worker.ts",
+    "skill-assets/frontend.tsx",
+    "skill-assets/backend.ts",
+    "skill-assets/endpoint.ts",
   ],
   { cwd: consumer, stdio: "inherit" },
 );
@@ -180,8 +186,16 @@ execFileSync(process.execPath, ["test-docs-endpoints.mjs"], {
   cwd: consumer,
   stdio: "inherit",
 });
+execFileSync(process.execPath, ["react-dist/skill-assets/backend.js"], {
+  cwd: consumer,
+  stdio: "inherit",
+});
 const browser = await build({
-  entryPoints: [join(consumer, "browser.ts")],
+  entryPoints: [
+    join(consumer, "browser.ts"),
+    join(consumer, "skill-assets/frontend.tsx"),
+  ],
+  outdir: join(temporary, "browser-check"),
   bundle: true,
   write: false,
   platform: "browser",

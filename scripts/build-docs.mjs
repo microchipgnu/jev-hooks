@@ -10,6 +10,7 @@ const pages = [
     [
       ["index", "Introduction"],
       ["release", "Installation"],
+      ["agents", "Build with an agent"],
       ["quickstart", "React quickstart"],
       ["concepts", "Composition & ambient"],
       ["backend", "Backend programs"],
