@@ -32,7 +32,7 @@
     }
   },
   "bin": {
-    "jev-check": "./dist/checker/cli.js"
+    "jev-check": "dist/checker/cli.js"
   },
   "files": [
     "dist",
