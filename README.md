@@ -1,4 +1,4 @@
-![Jev Hooks — semantic propagation for React and the backend. Facts → meaning → consequences.](https://raw.githubusercontent.com/microchipgnu/jev-hooks/main/.github/assets/jev-hooks-banner.png)
+![jev-hooks — Ambient state for AI applications. React hooks or a backend-only program.](https://raw.githubusercontent.com/microchipgnu/jev-hooks/main/.github/assets/jev-hooks-agent-skill.png)
 
 # jev-hooks
 
@@ -37,10 +37,6 @@ The server `jev-hooks` entry supports synchronous programs evaluated by `run()` 
 [React API](docs/react.md) · [Composition design and review](docs/composition.md) · [Architecture](docs/architecture.md)
 
 ## Build with an agent
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/microchipgnu/jev-hooks/main/.github/assets/jev-hooks-agent-skill.png" width="720" alt="jev-hooks: ambient state for AI applications. React hooks or a backend-only program. Install the agent skill with npx skills add microchipgnu/jev-hooks and the library with npm install jev-hooks. Works with OpenRouter, TypeSafe, Vercel and Cloudflare." />
-</p>
 
 Install the Jev Hooks skill in your application project:
 
