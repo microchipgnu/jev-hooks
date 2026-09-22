@@ -1,4 +1,4 @@
-![jev-hooks — Ambient state for AI applications. React hooks or a backend-only program.](https://raw.githubusercontent.com/microchipgnu/jev-hooks/main/.github/assets/jev-hooks-header.png?v=2)
+![jev-hooks — Ambient state for AI applications. React hooks or a backend-only program.](https://raw.githubusercontent.com/microchipgnu/jev-hooks/main/.github/assets/jev-hooks-header.png?v=3)
 
 # jev-hooks
 
